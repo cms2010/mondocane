@@ -1,0 +1,16 @@
+<% current = request.path_parameters[:action] %>
+<div id="header">
+  <div class="header-col"></div>
+  <div class="header-col">
+	<%= current == "collection" ? ( link_to "collection", collection_path, :class => "nav selected" ) : ( link_to "collection", collection_path, :class => "nav" )  %>
+  </div>
+  <div class="header-col">
+	<%= current == "archive" ? ( link_to "archive", archive_path, :class => "nav selected" ) : ( link_to "archive", archive_path, :class => "nav" )  %>
+  </div>
+  <div class="header-col">
+	<%= current == "exhibitions" ? ( link_to "exhibitions", exhibitions_path, :class => "nav selected" ) : ( link_to "exhibitions", exhibitions_path, :class => "nav" )  %>
+  </div>
+  <div class="header-col">
+	<%= current == "about" ? ( link_to "about", about_path, :class => "nav selected" ) : ( link_to "about", about_path, :class => "nav" )  %>
+  </div>
+</div>

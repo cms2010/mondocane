@@ -1,0 +1,13 @@
+<% $shows.each do |show| %>
+	<div class="thumb-col">
+		<% @link = "window.location = '/exhibition/" + show.id.to_s + "'" %>
+		<% content_tag :div, :"class" => "tile-hover", :onClick => @link do -%>
+			<div><%=h show.artist %></div>
+			<div><%=h show.title %></div>
+			<div><%=h show.date %></div>
+		<% end -%>
+		<div class="tile">
+		    <%= image_tag(show.url, :alt => "object image") %>
+		</div>
+	</div>
+<% end %>

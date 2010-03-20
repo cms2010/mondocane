@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  artist: 
+  title: 
+  date: 
+  description: 
+  url: MyString
+
+two:
+  artist: 
+  title: 
+  date: 
+  description: 
+  url: MyString

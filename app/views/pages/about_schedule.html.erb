@@ -1,0 +1,58 @@
+<div class="thumb-col">
+	<div><%= link_to "the store", "/about", :class => "nav" %></div>
+	<div><%= link_to "backstory &amp; photos", "/about/backstory", :class => "nav" %></div>
+	<div><%= link_to "sales &amp; shipping", "/about/sales", :class => "nav" %></div>
+	<div><%= link_to "press coverage", "/about/press", :class => "nav" %></div>
+	<div><span class="selected">show schedule</span></div>
+</div>
+<div class="text-col">
+	<% i = 0 %>
+	<% $events.each do |event| %>
+		<% if i < $events.length-1 %>
+			<% content_tag :div, :"class" => "clr" do -%>
+				<div class="headline"><%= link_to event.title, event.url, :class => "inline" %></div>
+				<% if event.subtitle != "" %>
+					<div><%=h event.subtitle %></div>
+				<% end %>
+				<% if event.date1 != "" %>
+					<div><%=h event.date1 %></div>
+				<% end %>
+				<% if event.date2 != "" %>
+					<div><%=h event.date2 %></div>
+				<% end %>
+				<% if event.address1 != "" %>
+					<div><%=h event.address1 %></div>
+				<% end %>
+				<% if event.address2 != "" %>
+					<div><%=h event.address2 %></div>
+				<% end %>
+				<% if event.city != "" %>
+					<div><%=h event.city %></div>
+				<% end %>
+			<% end -%>
+		<% else %>
+			<% content_tag :div do -%>
+				<div class="headline"><%= link_to event.title, event.url, :class => "inline" %></div>
+				<% if event.subtitle != "" %>
+					<div><%=h event.subtitle %></div>
+				<% end %>
+				<% if event.date1 != "" %>
+					<div><%=h event.date1 %></div>
+				<% end %>
+				<% if event.date2 != "" %>
+					<div><%=h event.date2 %></div>
+				<% end %>
+				<% if event.address1 != "" %>
+					<div><%=h event.address1 %></div>
+				<% end %>
+				<% if event.address2 != "" %>
+					<div><%=h event.address2 %></div>
+				<% end %>
+				<% if event.city != "" %>
+					<div><%=h event.city %></div>
+				<% end %>
+			<% end -%>
+		<% end %>
+		<% i += 1 %>
+	<% end %>
+</div>

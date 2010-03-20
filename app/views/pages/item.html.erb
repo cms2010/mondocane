@@ -1,0 +1,15 @@
+<div class="thumb-col">
+	<% @id = Integer(params[:id])-1 %>
+	<div><%= $items[@id].title %></div>
+	<div><%= $items[@id].country %>, <%= $items[@id].year %></div>
+	<div><%= $items[@id].dimensions %></div>
+	<div><%= $items[@id].price %></div>
+	<div class="description"><%= $items[@id].description %></div>
+</div>
+<% $images.each do |image| %>
+	<% if image.item == Integer(@id)+1 %>
+		<div class="full-col">
+			<%= image_tag(image.url, :alt => "object image") %>
+		</div>
+	<% end %>
+<% end %>

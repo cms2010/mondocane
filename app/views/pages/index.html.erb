@@ -1,0 +1,16 @@
+<% $items.each do |item| %>
+	<% if item.home == 1 %>
+		<div class="thumb-col">
+			<% @link = "window.location = 'item/" + item.id.to_s + "'" %>
+			<% content_tag :div, :"class" => "tile-hover", :onClick => @link do -%>
+				<div><%=h item.title %></div>
+				<div><%=h item.country %>, <%=h item.year %></div>
+				<div><%=h item.dimensions %></div>
+				<div><%=h item.price %></div>
+			<% end -%>
+			<div class="tile">
+			    <%= image_tag(item.url, :alt => "object image") %>
+			</div>
+		</div>
+	<% end %>
+<% end %>

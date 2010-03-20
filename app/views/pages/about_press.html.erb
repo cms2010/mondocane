@@ -1,0 +1,35 @@
+<div class="thumb-col">
+	<div><%= link_to "the store", "/about", :class => "nav" %></div>
+	<div><%= link_to "backstory &amp; photos", "/about/backstory", :class => "nav" %></div>
+	<div><%= link_to "sales &amp; shipping", "/about/sales", :class => "nav" %></div>
+	<div><span class="selected">press coverage</span></div>
+	<div><%= link_to "show schedule", "/about/schedule", :class => "nav" %></div>
+</div>
+<% $pressitems.each do |pressitem| %>
+	<% if pressitem.linkurl != "" %>
+		<div class="thumb-col">
+			<% @link = "window.location = '" + pressitem.linkurl + "'" %>
+			<% content_tag :div, :"class" => "tile-hover", :onClick => @link do -%>
+				<div><%=h pressitem.title %></div>
+				<div><%=h pressitem.source %></div>
+				<div><%=h pressitem.date %></div>
+				<div><%=h pressitem.format %></div>
+			<% end -%>
+			<div class="tile">
+			    <%= image_tag(pressitem.url, :alt => "press image") %>
+			</div>
+		</div>
+	<% else %>
+		<div class="thumb-col">
+			<div class="tile-hover nolink">
+				<div><%=h pressitem.title %></div>
+				<div><%=h pressitem.source %></div>
+				<div><%=h pressitem.date %></div>
+				<div><%=h pressitem.format %></div>
+			</div>
+			<div class="tile">
+			    <%= image_tag(pressitem.url, :alt => "press image") %>
+			</div>
+		</div>
+	<% end %>
+<% end %>

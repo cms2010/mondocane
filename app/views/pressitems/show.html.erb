@@ -1,0 +1,33 @@
+<p>
+  <b>Title:</b>
+  <%=h @pressitem.title %>
+</p>
+
+<p>
+  <b>Source:</b>
+  <%=h @pressitem.source %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%=h @pressitem.date %>
+</p>
+
+<p>
+  <b>Format:</b>
+  <%=h @pressitem.format %>
+</p>
+
+<p>
+  <b>Url:</b>
+  <%=h @pressitem.url %>
+</p>
+
+<p>
+  <b>Linkurl:</b>
+  <%=h @pressitem.linkurl %>
+</p>
+
+
+<%= link_to 'Edit', edit_pressitem_path(@pressitem) %> |
+<%= link_to 'Back', pressitems_path %>

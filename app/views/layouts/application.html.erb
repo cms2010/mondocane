@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+	<!-- Design and development by Christian Marc Schmidt -->
+	<!-- christianmarcschmidt.com -->
+	<!-- 14 Mar 2010 -->
+    <title><%= @title %></title>
+	<%= stylesheet_link_tag 'styles', :media => 'screen' %>
+  </head>
+  <body>
+	<div id="container">
+		<%= render 'layouts/header' %>
+		<div id="main">
+		    <div class="thumb-col">
+		      <% logo1 = image_tag("mondo.png", :alt => "object") %>
+		      <%= link_to logo1, root_path %>
+		    </div>
+
+			<%= yield %>
+
+		    <div class="cane-col">
+		      <% logo2 = image_tag("cane.png", :alt => "object") %>
+		      <%= link_to logo2, root_path %>
+		    </div>
+		</div>
+		<%= render 'layouts/footer' %>
+	</div>
+  </body>
+</html>

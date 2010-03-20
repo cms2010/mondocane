@@ -1,0 +1,22 @@
+<h1>Listing showimages</h1>
+
+<table>
+  <tr>
+    <th>Url</th>
+    <th>Show</th>
+  </tr>
+
+<% @showimages.each do |showimage| %>
+  <tr>
+    <td><%=h showimage.url %></td>
+    <td><%=h showimage.show %></td>
+    <td><%= link_to 'Show', showimage %></td>
+    <td><%= link_to 'Edit', edit_showimage_path(showimage) %></td>
+    <td><%= link_to 'Destroy', showimage, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New showimage', new_showimage_path %>

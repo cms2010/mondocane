@@ -1,0 +1,25 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: MyString
+  country: MyString
+  year: MyString
+  dimensions: MyString
+  price: MyString
+  description: MyText
+  url: MyString
+  home: 
+  collection: 
+  archive: 
+
+two:
+  title: MyString
+  country: MyString
+  year: MyString
+  dimensions: MyString
+  price: MyString
+  description: MyText
+  url: MyString
+  home: 
+  collection: 
+  archive: 

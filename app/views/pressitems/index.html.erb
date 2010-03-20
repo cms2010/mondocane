@@ -1,0 +1,30 @@
+<h1>Listing pressitems</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Source</th>
+    <th>Date</th>
+    <th>Format</th>
+    <th>Url</th>
+    <th>Linkurl</th>
+  </tr>
+
+<% @pressitems.each do |pressitem| %>
+  <tr>
+    <td><%=h pressitem.title %></td>
+    <td><%=h pressitem.source %></td>
+    <td><%=h pressitem.date %></td>
+    <td><%=h pressitem.format %></td>
+    <td><%=h pressitem.url %></td>
+    <td><%=h pressitem.linkurl %></td>
+    <td><%= link_to 'Show', pressitem %></td>
+    <td><%= link_to 'Edit', edit_pressitem_path(pressitem) %></td>
+    <td><%= link_to 'Destroy', pressitem, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New pressitem', new_pressitem_path %>
