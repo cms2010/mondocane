@@ -1,12 +1,9 @@
 ActionController::Routing::Routes.draw do |map|
 
-  map.resources :events
-  map.resources :pressitems
-  map.resources :showimages
-  map.resources :shows
-  map.resources :images
-  map.resources :items
-
+  map.resources :items, :active_scaffold => true
+  map.resources :items, :has_many => :images
+  map.resources :images, :active_scaffold => true
+  
   map.collection  '/collection',      :controller => 'pages', :action => 'collection'
   map.archive     '/archive',         :controller => 'pages', :action => 'archive'
   map.exhibitions '/exhibitions',     :controller => 'pages', :action => 'exhibitions'
@@ -17,10 +14,6 @@ ActionController::Routing::Routes.draw do |map|
   map.connect     '/about/press',     :controller => 'pages', :action => 'about_press'
   map.connect     '/about/schedule',  :controller => 'pages', :action => 'about_schedule'
   
-  map.connect     '/items/home',      :controller => 'pages', :action => 'item_home'
-  map.connect     '/items/collection',:controller => 'pages', :action => 'item_collection'
-  map.connect     '/items/archive',   :controller => 'pages', :action => 'item_archive'
-    
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:
