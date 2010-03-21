@@ -1,14 +1,11 @@
 <div class="thumb-col">
-	<% @id = Integer(params[:id])-1 %>
 	<div><%= $shows[@id].artist %></div>
 	<div><%= $shows[@id].title %></div>
 	<div><%= $shows[@id].date %></div>
 	<div class="description"><%= $shows[@id].description %></div>
 </div>
-<% $showimages.each do |showimage| %>
-	<% if showimage.show == Integer(@id)+1 %>
-		<div class="full-col">
-			<%= image_tag(showimage.url, :alt => "object image") %>
-		</div>
-	<% end %>
+<% @showimages.each do |showimage| %>
+	<div class="full-col">
+		<%= image_tag(showimage.url, :alt => "object image") %>
+	</div>
 <% end %>

@@ -68,5 +68,20 @@ class PagesController < ApplicationController
   def about
     @title = "MONDOCANE / about"
   end
+  
+  def item
+    # get item id
+    @id = Integer(params[:id])-1
+    
+    currentItem = Item.find(params[:id])
+    @images = currentItem.image.find(:all)
+  end
 
+  def exhibition
+    # get exhibition id
+    @id = Integer(params[:id])-1
+    
+    currentShow = Show.find(params[:id])
+    @showimages = currentShow.showimage.find(:all)
+  end
 end

@@ -1,8 +1,14 @@
 ActionController::Routing::Routes.draw do |map|
 
   map.resources :items, :active_scaffold => true
-  map.resources :items, :has_many => :images
   map.resources :images, :active_scaffold => true
+  map.resources :shows, :active_scaffold => true
+  map.resources :showimages, :active_scaffold => true
+  map.resources :pressitems, :active_scaffold => true
+  map.resources :events, :active_scaffold => true
+
+  map.resources :items, :has_many => :images
+  map.resources :shows, :has_many => :showimages
   
   map.collection  '/collection',      :controller => 'pages', :action => 'collection'
   map.archive     '/archive',         :controller => 'pages', :action => 'archive'

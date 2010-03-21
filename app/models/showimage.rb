@@ -1,3 +1,3 @@
 class Showimage < ActiveRecord::Base
-  belongs_to :shows
+  belongs_to :show
 end
